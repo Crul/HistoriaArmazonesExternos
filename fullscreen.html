@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base target="_blank">
+    <title>Biombos asiáticos en Nueva España</title>
+    <link rel="stylesheet" href="lib/zoomist.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #4f5054;
+        }
+        .zoomist-container {
+            --zoomist-wrapper-bg-color: #4f5054;
+        }
+        .zoomist-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .zoomist-image {
+            width: 100%;
+        }
+
+        .zoomist-image img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="zoomist-container">
+        <div class="zoomist-wrapper">
+            <div class="zoomist-image">
+                <img id="image" src="" />
+            </div>
+        </div>
+    </div>
+    <script src="lib/zoomist.umd.js"></script>
+    <script>
+        let zoomImg;
+        const searchParams = new URLSearchParams(window.location.search);
+        if (!searchParams.has('img'))
+            alert("No image found");
+        else {
+            image.src = searchParams.get('img');
+            zoomImg = new Zoomist('.zoomist-container', {
+              bounds: false,
+              minScale: 0.2,
+            });
+            setTimeout(() => {
+                zoomImg.moveTo({x: "center", y: window.innerHeight/2 - image.height/2 });
+                zoomImg.zoom(2);
+            }, 100);
+        }
+    </script>
+  </body>
+</html>

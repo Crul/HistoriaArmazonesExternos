@@ -1,0 +1,121 @@
+* {
+    font-family: Verdana;
+}
+html, body {
+    background: #333;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body > div {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    display: none;
+    background: #fdf8ed;
+    font-size: 140%;
+}
+body > div > table,
+body > div > div,
+body > div > ol {
+    margin: auto;
+    display: inline-block
+}
+table.text-left tr td {
+    text-align: left;
+}
+audio {
+    vertical-align: middle;
+}
+ol {
+    width: 40vw;
+    margin-top: 40px !important;
+}
+ol li {
+    margin-bottom: 20px;
+    text-align: left;
+}
+ul li {
+    list-style: none;
+}
+img {
+    max-height: 400px;
+    max-width: 100%;
+    cursor: pointer;
+}
+h1 {
+    font-size: 120%;
+    color: #fdffc9;
+    background: #751511;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), -1px -2px 0px rgba(0,0,0,.9);
+    padding: 10px;
+    margin-top: 0;
+}
+h3 {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+figcaption {
+    font-size: 80%;
+}
+figcaption > p {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+figure {
+    text-align: center;
+}
+.fig-half {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    width: 49%;
+}
+
+
+@keyframes outforward {
+  0%   { left:  -0vw; opacity:   1; transform: scaleX(1) }
+  100% { left: -50vw; opacity: 0.5; transform: scaleX(0) }
+}
+
+.outforward {
+  animation-name: outforward;
+  animation-duration: 0.66s;
+  left: -100vw;
+  opacity: 0;
+}
+
+@keyframes inforward {
+  0%   { left: 50vw; opacity: 0.5; transform: scaleX(0) }
+  100% { left:  0vw; opacity:   1; transform: scaleX(1) }
+}
+
+.inforward {
+  animation-name: inforward;
+  animation-duration: 0.66s;
+  left: 0vw;
+}
+
+@keyframes outbackward {
+  0%   { left:  0vw; opacity:   1; transform: scaleX(1) }
+  100% { left: 50vw; opacity: 0.5; transform: scaleX(0) }
+}
+
+.outbackward {
+  animation-name: outbackward;
+  animation-duration: 0.66s;
+  left: 100vw;
+  opacity: 0;
+}
+
+@keyframes inbackward {
+  0%   { left: -50vw; opacity: 0.5; transform: scaleX(0) }
+  100% { left:   0vw; opacity:   1; transform: scaleX(1) }
+}
+
+.inbackward {
+  animation-name: inbackward;
+  animation-duration: 0.66s;
+  left: 0vw;
+}
